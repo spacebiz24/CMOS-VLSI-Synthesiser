@@ -1,0 +1,12 @@
+create_clock -name clk -period 4 -waveform {0 2} [get_ports "CLK"]
+
+set_clock_transition -rise 3.5 [get_clocks "clk"]
+set_clock_transition -fall 3.5 [get_clocks "clk"]
+set_clock_uncertainty 0.01 [get_ports "CLK"]
+
+set_input_transition 4.4 [all_inputs]
+
+set_input_delay -max 2 -clock clk [all_inputs]
+set_output_delay -max 2 -clock clk [all_outputs]
+
+set_load 0.2 [all_outputs]
