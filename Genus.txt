@@ -4,6 +4,7 @@ genus
 read_libs /home/installs/FOUNDRY/digital/45nm/dig/lib/typical.lib
 read_hdl File.v
 elaborate "Top Level Module"
+read_sdc "Constraints.g/.sdc"
 set_db syn_generic_effort medium
 set_db syn_map_effort medium
 set_db syn_opt_effort medium
